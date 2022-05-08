@@ -1,0 +1,140 @@
+/* start global rules  */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Dosis', sans-serif; */
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/* end global rules  */
+/* Start Variable rules */
+:root {
+  --main-color: #ff47d9;
+  --secondary-color: #3c1053ff;
+  --main-transition: 0.3s;
+  --section-padding-top: 50px;
+  --section-padding-bottom: 50px;
+  --section-background-color: #f2f2f4;
+  --paragraph-color: #777;
+}
+
+/* End Variable rules */
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-135deg, #c850c0, #4158d8);
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .wrapper {
+  clip-path: circle(75%);
+}
+.menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d8);
+  transition: all 0.3s ease;
+}
+#active:checked ~ .menu-btn {
+  background: white;
+  color: #4158d8;
+}
+#active:checked ~ .menu-btn i::before {
+  content: "\f00d";
+}
+.wrapper ul {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.wrapper ul li {
+  margin: 25px 0;
+}
+.wrapper ul li a {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 50px;
+  position: relative;
+  transition: var(--main-transition);
+}
+.wrapper ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-radius: 50px;
+  transform: scaleY(0);
+  /* transition: var(--main-transition); */
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+.wrapper ul li a:hover::after {
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover {
+  color: #c850c0;
+}
+.checkbox {
+  position: relative;
+}
+input[type="checkbox"] {
+  display: none;
+}
